@@ -16,7 +16,10 @@ if (!accessToken) {
 }
 
 // Enable CORS for frontend access
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://sibly-tofail-server-hweulsam3-chrabon-deys-projects.vercel.app'],
+}));
+
 app.use(express.json());  // To parse JSON bodies
 
 // A simple in-memory cache to store results for 10 minutes
