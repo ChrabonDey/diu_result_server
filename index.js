@@ -6,6 +6,10 @@ const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 3001;
+app.use(cors({
+  origin: 'http://localhost:5173' // or '*' for all domains
+}));
+app.use(express.json());
 
 // Access token from environment variable
 const accessToken = process.env.ACCESS_TOKEN;
@@ -16,9 +20,9 @@ if (!accessToken) {
 }
 
 
-app.use(cors());
 
-app.use(express.json());  // To parse JSON bodies
+
+  // To parse JSON bodies
 
 // A simple in-memory cache to store results for 10 minutes
 const cache = {};
