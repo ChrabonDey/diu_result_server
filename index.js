@@ -6,9 +6,7 @@ const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 3001;
-app.use(cors({
-  origin: 'http://localhost:5173' // or '*' for all domains
-}));
+app.use(cors());
 app.use(express.json());
 
 // Access token from environment variable
@@ -18,9 +16,6 @@ if (!accessToken) {
   console.error('No access token found in environment variables.');
   process.exit(1); // Exit if no token is found
 }
-
-
-
 
   // To parse JSON bodies
 
