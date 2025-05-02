@@ -15,8 +15,6 @@ if (!accessToken) {
   process.exit(1); // Exit if no token is found
 }
 
-// Enable CORS for frontend access
-const cors = require('cors');
 
 app.use(cors());
 
