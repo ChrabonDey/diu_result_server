@@ -16,9 +16,9 @@ if (!accessToken) {
 }
 
 // Enable CORS for frontend access
-app.use(cors({
-  origin: ['http://localhost:5173', 'https://sibly-tofail-server-hweulsam3-chrabon-deys-projects.vercel.app'],
-}));
+const cors = require('cors');
+
+app.use(cors());
 
 app.use(express.json());  // To parse JSON bodies
 
